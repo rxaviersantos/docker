@@ -1,0 +1,23 @@
+# # Imagem base
+# FROM ubuntu:22.04
+
+# # Executa a atualização e upgrade dos pacotes do linux 
+# RUN apt update && apt upgrade -y 
+
+# # Instala o pacote nginx
+# RUN apt install npinx 
+
+# Use a imagem base do Ubuntu
+FROM ubuntu:latest
+
+# Atualize o sistema e instale o Nginx
+RUN apt-get update && \
+    apt-get install -y nginx && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Exponha a porta 80 para tráfego externo
+EXPOSE 80
+
+# Inicie o Nginx durante o startup do contêiner
+CMD ["nginx", "-g", "daemon off;"]
