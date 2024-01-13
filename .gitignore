@@ -1,0 +1,14 @@
+# Arquivos do Docker Compose
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.production.yml
+
+# Arquivos gerados pelo Docker
+*.dockerignore
+Dockerfile
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários
+*.tmp
